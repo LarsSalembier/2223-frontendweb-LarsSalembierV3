@@ -31,22 +31,26 @@
 ### Front-end Web Development
 
 - **componenten**
+
   - [ ] heeft meerdere componenten - dom & slim (naast login/register)
   - [ ] definieert constanten (variabelen, functies en componenten) buiten de component
   - [ ] minstens één form met validatie (naast login/register)
   - [ ] login systeem (eigen of extern zoals bv. Auth0) <br />
 
 - **routing**
+
   - [ ] heeft minstens 2 pagina's (naast login/register)
   - [ ] routes worden afgeschermd met authenticatie en autorisatie <br />
 
 - **state-management**
+
   - [ ] meerdere API calls (naast login/register)
   - [ ] degelijke foutmeldingen indien API call faalt
   - [ ] gebruikt `useState` enkel voor lokale state
   - [ ] gebruikt `Context`, `useReducer`, `Redux`… voor globale state <br />
 
 - **hooks**
+
   - [ ] kent het verschil tussen de hooks (`useCallback`, `useEffect`…)
   - [ ] gebruikt de hooks op de juiste manier <br />
 
@@ -59,20 +63,24 @@
 ### Web Services
 
 - **datalaag**
+
   - [ ] voldoende complex (meer dan één tabel)
   - [ ] één module beheert de connectie + connectie wordt gesloten bij sluiten server
   - [ ] heeft migraties
   - [ ] heeft seeds <br />
 
 - **repositorylaag**
+
   - [ ] definieert één repository per entiteit (niet voor tussentabellen) - indien van toepassing
   - [ ] mapt OO-rijke data naar relationele tabellen en vice versa <br />
 
 - **servicelaag met een zekere complexiteit**
+
   - [ ] bevat alle domeinlogica
   - [ ] bevat geen SQL-queries of databank-gerelateerde code <br />
 
 - **REST-laag**
+
   - [ ] meerdere routes met invoervalidatie
   - [ ] degelijke foutboodschappen
   - [ ] volgt de conventies van een RESTful API
