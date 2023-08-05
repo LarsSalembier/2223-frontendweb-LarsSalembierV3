@@ -1,6 +1,8 @@
 # Lars Salembier (Studentennummer)
 
-> Duid aan welke vakken je volgt en vermeld voor deze vakken de link naar jouw GitHub repository. In het geval je slechts één vak volgt, verwijder alle inhoud omtrent het andere vak. Verwijder alle instructies (lijnen die starten met >)
+> Duid aan welke vakken je volgt en vermeld voor deze vakken de link naar jouw GitHub repository. In
+> het geval je slechts één vak volgt, verwijder alle inhoud omtrent het andere vak. Verwijder alle
+> instructies (lijnen die starten met >)
 
 - [x] Front-end Web Development
   - [GitHub repository](github.com/HOGENT-Web)
@@ -18,7 +20,8 @@
 
 ## Projectbeschrijving
 
-> Omschrijf hier duidelijk waarover jouw project gaat. Voeg een domeinmodel (of EERD) toe om jouw entiteiten te verduidelijken.
+> Omschrijf hier duidelijk waarover jouw project gaat. Voeg een domeinmodel (of EERD) toe om jouw
+> entiteiten te verduidelijken.
 
 ## Screenshots
 
@@ -98,7 +101,8 @@
 
 ### Front-end Web Development
 
-> Hoe heb je jouw applicatie gestructureerd (mappen, design patterns, hiërarchie van componenten, state...)?
+> Hoe heb je jouw applicatie gestructureerd (mappen, design patterns, hiërarchie van componenten,
+> state...)?
 
 ### Web Services
 
@@ -113,27 +117,40 @@
 #### Typescript
 
 De website is volledig geschreven in [Typescript](https://www.npmjs.com/package/typescript).
-TypeScript is een opensource-programmeertaal die JavaScript uitbreidt met statische types. Dit maakt het mogelijk om fouten op te sporen tijdens het ontwikkelingsproces in plaats van tijdens de uitvoering. Hierdoor kan de code efficiënter en betrouwbaarder worden ontwikkeld.
+TypeScript is een opensource-programmeertaal die JavaScript uitbreidt met statische types. Dit maakt
+het mogelijk om fouten op te sporen tijdens het ontwikkelingsproces in plaats van tijdens de
+uitvoering. Hierdoor kan de code efficiënter en betrouwbaarder worden ontwikkeld.
 
 #### Vite
 
-De website wordt gebuild met [Vite](https://www.npmjs.com/package/vite) in plaats van Create-React-App (CRA). Vite is een frontend build tool die véél sneller is dan CRA. De opstart- en recompiletijden van Vite-applicaties zijn zéér kort.
+De website wordt gebuild met [Vite](https://www.npmjs.com/package/vite) in plaats van
+Create-React-App (CRA). Vite is een frontend build tool die véél sneller is dan CRA. De opstart- en
+recompiletijden van Vite-applicaties zijn zéér kort.
 
 #### Speedy Web Compiler (SWC)
 
-Vite is geconfigureerd om [SWC](https://swc.rs/) te gebruiken in plaats van de standaard Typescript compiler Babel. SWC is een supersnelle Typescript compiler die 20 tot 70 keer sneller is dan Babel.
+Vite is geconfigureerd om [SWC](https://swc.rs/) te gebruiken in plaats van de standaard Typescript
+compiler Babel. SWC is een supersnelle Typescript compiler die 20 tot 70 keer sneller is dan Babel.
 
 #### ESLint en Prettier
 
-Tijdens development gebruiken we de linting tool [ESLint](https://www.npmjs.com/package/eslint). ESLint zal problemen in de code vroegtijdig aanduiden. We gebruiken hierbovenop de opinionated codeformatter [Prettier](https://www.npmjs.com/package/prettier) om extra code styling toe te voegen.
+Tijdens development gebruiken we de linting tool [ESLint](https://www.npmjs.com/package/eslint).
+ESLint zal problemen in de code vroegtijdig aanduiden. We gebruiken hierbovenop de opinionated
+codeformatter [Prettier](https://www.npmjs.com/package/prettier) om extra code styling toe te
+voegen.
 
 ##### ESLint Configuraties
 
-We gebruiken hierbij [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb) als basisconfiguratie. Deze opinionated style guide voor React-projecten ontwikkeld door Airbnb is zeer populair en zorgt voor uniforme code practices doorheen het hele project.
+We gebruiken hierbij [eslint-config-airbnb](https://www.npmjs.com/package/eslint-config-airbnb) als
+basisconfiguratie. Deze opinionated style guide voor React-projecten ontwikkeld door Airbnb is zeer
+populair en zorgt voor uniforme code practices doorheen het hele project.
 
-- We breiden deze style guide uit voor gebruik met Typescript via de plugin [eslint-config-airbnb-typescript](https://www.npmjs.com/package/eslint-config-airbnb-typescript)
+- We breiden deze style guide uit voor gebruik met Typescript via de plugin
+  [eslint-config-airbnb-typescript](https://www.npmjs.com/package/eslint-config-airbnb-typescript)
 
-Hierbovenop gebruiken we [eslint-config-prettier](https://www.npmjs.com/package/eslint-config-prettier) om de Prettier-stijlregels toe te passen.
+Hierbovenop gebruiken we
+[eslint-config-prettier](https://www.npmjs.com/package/eslint-config-prettier) om de
+Prettier-stijlregels toe te passen.
 
 ##### ESLint Plugins
 
@@ -151,29 +168,41 @@ We gebruiken ook enkele plugins die ESLint uitbreiden voor gebruik met:
 
 #### Vitest
 
-We gebruiken [Vitest](https://www.npmjs.com/package/vitest) in plaats van Jest om onze unit tests te runnen. Dit omdat Vitest beter integreert met Vite en vooral veel sneller is dan Jest.
+We gebruiken [Vitest](https://www.npmjs.com/package/vitest) in plaats van Jest om onze unit tests te
+runnen. Dit omdat Vitest beter integreert met Vite en vooral veel sneller is dan Jest.
 
 #### NextUI
 
-We gebruiken [NextUI](https://www.npmjs.com/package/@nextui-org/react) als UI-framework. NextUI is een React UI-framework gebaseerd op TailwindCSS en Framer Motion.
+We gebruiken [NextUI](https://www.npmjs.com/package/@nextui-org/react) als UI-framework. NextUI is
+een React UI-framework gebaseerd op TailwindCSS en Framer Motion.
 
 #### Framer Motion
 
-We gebruiken [Framer Motion](https://www.npmjs.com/package/framer-motion) om animaties toe te voegen aan onze website. Framer Motion is een React library voor het maken van animaties.
+We gebruiken [Framer Motion](https://www.npmjs.com/package/framer-motion) om animaties toe te voegen
+aan onze website. Framer Motion is een React library voor het maken van animaties.
 
 #### TailwindCSS
 
-We gebruiken [TailwindCSS](https://www.npmjs.com/package/tailwindcss) als CSS-framework. TailwindCSS is een utility-first CSS-framework. Dit betekent dat het geen kant-en-klare componenten bevat zoals Bootstrap, maar dat je zelf de componenten moet bouwen. We gebruiken TailwindCSS omdat het een zeer lichtgewicht framework is en omdat het zeer flexibel is. TailwindCSS is ook zeer populair en heeft een grote community.
+We gebruiken [TailwindCSS](https://www.npmjs.com/package/tailwindcss) als CSS-framework. TailwindCSS
+is een utility-first CSS-framework. Dit betekent dat het geen kant-en-klare componenten bevat zoals
+Bootstrap, maar dat je zelf de componenten moet bouwen. We gebruiken TailwindCSS omdat het een zeer
+lichtgewicht framework is en omdat het zeer flexibel is. TailwindCSS is ook zeer populair en heeft
+een grote community.
 
-We gebruiken [prettier-plugin-tailwindcss](https://www.npmjs.com/package/prettier-plugin-tailwind) om TailwindCSS classes te formatteren en ordenen met Prettier.
+We gebruiken [prettier-plugin-tailwindcss](https://www.npmjs.com/package/prettier-plugin-tailwind)
+om TailwindCSS classes te formatteren en ordenen met Prettier.
 
-We gebruiken [PostCSS](https://www.npmjs.com/package/postcss) om TailwindCSS te compileren naar CSS. PostCSS is een tool voor het transformeren en optimaliseren van CSS met JavaScript.
+We gebruiken [PostCSS](https://www.npmjs.com/package/postcss) om TailwindCSS te compileren naar CSS.
+PostCSS is een tool voor het transformeren en optimaliseren van CSS met JavaScript.
 
-We gebruiken [Autoprefixer](https://www.npmjs.com/package/autoprefixer) om vendor prefixes toe te voegen aan onze CSS. Dit zorgt ervoor dat onze CSS-code compatibel is met alle browsers.
+We gebruiken [Autoprefixer](https://www.npmjs.com/package/autoprefixer) om vendor prefixes toe te
+voegen aan onze CSS. Dit zorgt ervoor dat onze CSS-code compatibel is met alle browsers.
 
-We gebruiken [PostCSS-import](https://www.npmjs.com/package/postcss-import) om CSS-bestanden te importeren in andere CSS-bestanden.
+We gebruiken [PostCSS-import](https://www.npmjs.com/package/postcss-import) om CSS-bestanden te
+importeren in andere CSS-bestanden.
 
-We gebruiken [PostCSS-nested](https://www.npmjs.com/package/postcss-nested) om geneste CSS te schrijven.
+We gebruiken [PostCSS-nested](https://www.npmjs.com/package/postcss-nested) om geneste CSS te
+schrijven.
 
 ### Web Services
 
