@@ -1,4 +1,4 @@
-import { Spinner } from "@nextui-org/spinner";
+import { Spinner } from '@nextui-org/spinner';
 
 function App() {
   return <Spinner />;
