@@ -1,16 +1,16 @@
-import { render } from "@testing-library/react";
-import type { RenderResult } from "@testing-library/react";
+import { render } from '@testing-library/react';
+import type { RenderResult } from '@testing-library/react';
 
-import App from "./App";
+import Router from './routing/Router';
 
-describe("App", () => {
+describe('App', () => {
   let renderResult: RenderResult;
 
   beforeEach(() => {
-    renderResult = render(<App />);
+    renderResult = render(<Router />);
   });
 
-  it("should render", () => {
+  it('should render', () => {
     expect(renderResult).toBeTruthy();
   });
 });

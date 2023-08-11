@@ -10,6 +10,7 @@ import {
   Image,
 } from '@nextui-org/react';
 import { useState } from 'react';
+import NavigationItem from '../typings/navigationItem';
 
 type NavigationProps = {
   logoData: {
@@ -19,17 +20,14 @@ type NavigationProps = {
     alt: string;
   };
   brandName: string;
-  menuItems: string[];
-  extraItems: string[];
+  items: NavigationItem[];
 };
 
-function Navigation({
-  logoData,
-  brandName,
-  menuItems,
-  extraItems,
-}: NavigationProps) {
+function Navigation({ logoData, brandName, items }: NavigationProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const mainItems = items.filter((item) => item.isMainNavigationItem());
+  const extraItems = items.filter((item) => item.isExtraNavigationItem());
 
   return (
     <Navbar
@@ -55,27 +53,27 @@ function Navigation({
       </NavbarContent>
       <NavbarContent justify="end" className="gap-8 lg:gap-16">
         <div className="hidden gap-8 md:flex">
-          {menuItems.map((item) => (
-            <NavbarItem key={item}>
-              <Link color="foreground" href="#">
-                {item}
+          {mainItems.map((item) => (
+            <NavbarItem key={item.path}>
+              <Link color="foreground" href={item.path}>
+                {item.name}
               </Link>
             </NavbarItem>
           ))}
         </div>
       </NavbarContent>
       <NavbarMenu>
-        {menuItems.map((item) => (
-          <NavbarMenuItem key={item} className="md:hidden">
-            <Link color="foreground" href="#" size="lg">
-              {item}
+        {mainItems.map((item) => (
+          <NavbarMenuItem key={item.path} className="md:hidden">
+            <Link color="foreground" href={item.path} size="lg">
+              {item.name}
             </Link>
           </NavbarMenuItem>
         ))}
         {extraItems.map((item) => (
-          <NavbarMenuItem key={item}>
-            <Link color="foreground" href="#" size="lg">
-              {item}
+          <NavbarMenuItem key={item.path}>
+            <Link color="foreground" href={item.path} size="lg">
+              {item.name}
             </Link>
           </NavbarMenuItem>
         ))}
