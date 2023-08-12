@@ -9,14 +9,14 @@ type PageContainerProps = {
 
 function PageContainer({ children }: PageContainerProps) {
   return (
-    <>
+    <div className="mx-auto max-w-screen-xl">
       <Navigation
         logoData={LOGO_DATA}
         brandName={BRAND_NAME}
         items={NAVIGATION_ITEMS}
       />
       {children}
-    </>
+    </div>
   );
 }
 
