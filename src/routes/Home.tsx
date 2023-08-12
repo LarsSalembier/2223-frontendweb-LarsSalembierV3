@@ -11,24 +11,24 @@ import PageContainer from '../components/PageContainer';
 function Home() {
   return (
     <PageContainer>
-      <div className="w-full space-y-12 px-32 py-32">
-        <h1 className="w-2/3 text-6xl font-semibold leading-tight">
+      <div className="w-full space-y-8 px-8 py-8 sm:space-y-12 sm:px-32 sm:py-32">
+        <h1 className="w-2/3 text-3xl font-semibold leading-tight sm:text-6xl">
           Word lid van de leukste jeugdbeweging van Houthulst
         </h1>
-        <p className="text-xl">
+        <p className="sm:text-xl">
           De Chiro staat voor leuke avonturen en levenslange vriendschappen
         </p>
-        <Button color="primary" size="lg">
+        <Button color="primary" size="md">
           Inschrijven voor het Chirojaar
         </Button>
       </div>
       <Image
-        className="h-96 w-screen object-cover"
+        className="w-screen object-cover sm:h-96"
         src="/images/309304541_466293492191363_7096908935596833318_n.jpg"
         radius="none"
       />
-      <div className="w-full space-y-8 px-32 py-16">
-        <h2 className="text-4xl font-semibold">Over ons</h2>
+      <div className="w-full space-y-8 px-8 py-8 sm:px-32 sm:py-16">
+        <h2 className="text-3xl font-semibold sm:text-4xl">Over ons</h2>
         <p className="">
           Chiro Sint-Jan Houthulst is de lokale Chirobeweging in Houthulst. Met
           een rijke geschiedenis en een sterke leidingsploeg zorgen we voor
@@ -41,9 +41,9 @@ function Home() {
         </p>
       </div>
       <Divider />
-      <div className="w-full space-y-12 px-32 py-12">
-        <h2 className="text-4xl font-semibold">Evenementen</h2>
-        <div className="grid grid-cols-2 grid-rows-2 justify-center gap-10">
+      <div className="w-full space-y-8 px-8 py-8 sm:px-32 sm:py-16">
+        <h2 className="text-3xl font-semibold sm:text-4xl">Evenementen</h2>
+        <div className="grid justify-center gap-10 sm:grid-cols-2 sm:grid-rows-2">
           <Card className="">
             <CardHeader className="flex-col !items-start gap-4">
               <h3 className="text-2xl font-bold">Jeugddag</h3>
@@ -51,7 +51,7 @@ function Home() {
             </CardHeader>
             <Image
               alt="Card background"
-              className="z-0 h-full w-full object-cover"
+              className="h-full w-full object-cover"
               src="/images/312054780_491845939636118_866673602771295618_n.jpg"
               radius="none"
             />
@@ -66,7 +66,7 @@ function Home() {
             </CardHeader>
             <Image
               alt="Card background"
-              className="z-0 h-full w-full object-cover"
+              className="h-full w-full object-cover"
               src="/images/312054780_491845939636118_866673602771295618_n.jpg"
               radius="none"
             />
@@ -81,7 +81,7 @@ function Home() {
             </CardHeader>
             <Image
               alt="Card background"
-              className="z-0 h-full w-full object-cover"
+              className="h-full w-full object-cover"
               src="/images/312054780_491845939636118_866673602771295618_n.jpg"
               radius="none"
             />
@@ -96,7 +96,7 @@ function Home() {
             </CardHeader>
             <Image
               alt="Card background"
-              className="z-0 h-full w-full object-cover"
+              className="h-full w-full object-cover"
               src="/images/312054780_491845939636118_866673602771295618_n.jpg"
               radius="none"
             />
@@ -107,10 +107,10 @@ function Home() {
         </div>
       </div>
       <Divider />
-      <div className="w-full space-y-12 px-32 py-12">
-        <h2 className="text-4xl font-semibold">Briefjes</h2>
+      <div className="w-full space-y-8 px-8 py-8 sm:px-32 sm:py-16">
+        <h2 className="text-3xl font-semibold sm:text-4xl">Briefjes</h2>
         <p>Hier vind je alle laatste briefjes en mededelingen.</p>
-        <div className="grid grid-cols-2 grid-rows-2 justify-center gap-10">
+        <div className="grid justify-center gap-10 sm:grid-cols-2 sm:grid-rows-2">
           <Card className="">
             <CardHeader className="flex-col !items-start gap-4">
               <h3 className="text-2xl font-bold">Jeugddag</h3>
