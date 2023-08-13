@@ -2,9 +2,8 @@
   "root": true,
   "env": { "browser": true, "es2020": true },
   "extends": [
-    "airbnb",
-    "airbnb-typescript",
-    "airbnb/hooks",
+    "airbnb-typescript-prettier",
+    "airbnb-typescript-prettier/hooks",
     "plugin:react/recommended",
     "plugin:react-hooks/recommended",
     "plugin:import/recommended",
@@ -14,7 +13,6 @@
     "eslint:recommended"
   ],
   "ignorePatterns": ["dist"],
-  "overrides": [],
   "parser": "@typescript-eslint/parser",
   "parserOptions": {
     "ecmaVersion": "latest",
