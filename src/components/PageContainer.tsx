@@ -2,6 +2,7 @@ import { ReactNode } from 'react';
 import { BRAND_NAME, LOGO_DATA } from '../data/miscData';
 import Navigation from './Navigation';
 import NAVIGATION_ITEMS from '../data/navigationItems';
+import Footer from './Footer';
 
 type PageContainerProps = {
   children: ReactNode;
@@ -16,6 +17,7 @@ function PageContainer({ children }: PageContainerProps) {
         items={NAVIGATION_ITEMS}
       />
       {children}
+      <Footer />
     </div>
   );
 }
