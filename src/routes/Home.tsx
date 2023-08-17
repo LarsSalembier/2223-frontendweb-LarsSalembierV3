@@ -18,7 +18,7 @@ function Home() {
         <p className="sm:text-xl">
           De Chiro staat voor leuke avonturen en levenslange vriendschappen
         </p>
-        <Button color="primary" size="md">
+        <Button className="bg-gray-900" size="lg">
           Inschrijven voor het Chirojaar
         </Button>
       </div>
@@ -44,7 +44,7 @@ function Home() {
       <div className="w-full space-y-8 px-8 py-8 sm:px-32 sm:py-16">
         <h2 className="text-3xl font-semibold sm:text-4xl">Evenementen</h2>
         <div className="grid justify-center gap-10 sm:grid-cols-2 sm:grid-rows-2">
-          <Card className="">
+          <Card className="bg-gray-900">
             <CardHeader className="flex-col !items-start gap-4">
               <h3 className="text-2xl font-bold">Jeugddag</h3>
               <p className="text-tiny font-bold uppercase">17 september</p>
@@ -59,7 +59,7 @@ function Home() {
               <p>Het kamp gaat door van 21 juli tot 31 juli in Opoeteren.</p>
             </CardBody>
           </Card>
-          <Card className="">
+          <Card className="bg-gray-900">
             <CardHeader className="flex-col !items-start gap-4">
               <h3 className="text-2xl font-bold">Startdag</h3>
               <p className="text-tiny font-bold uppercase">17 september</p>
@@ -74,7 +74,7 @@ function Home() {
               <p>Het kamp gaat door van 21 juli tot 31 juli in Opoeteren.</p>
             </CardBody>
           </Card>
-          <Card className="">
+          <Card className="bg-gray-900">
             <CardHeader className="flex-col !items-start gap-4">
               <h3 className="text-2xl font-bold">Dia-avond</h3>
               <p className="text-tiny font-bold uppercase">17 september</p>
@@ -89,7 +89,7 @@ function Home() {
               <p>Het kamp gaat door van 21 juli tot 31 juli in Opoeteren.</p>
             </CardBody>
           </Card>
-          <Card className="">
+          <Card className="bg-gray-900">
             <CardHeader className="flex-col !items-start gap-4">
               <h3 className="text-2xl font-bold">Dia-avond</h3>
               <p className="text-tiny font-bold uppercase">17 september</p>
@@ -111,7 +111,7 @@ function Home() {
         <h2 className="text-3xl font-semibold sm:text-4xl">Briefjes</h2>
         <p>Hier vind je alle laatste briefjes en mededelingen.</p>
         <div className="grid justify-center gap-10 sm:grid-cols-2 sm:grid-rows-2">
-          <Card className="">
+          <Card className="bg-gray-900">
             <CardHeader className="flex-col !items-start gap-4">
               <h3 className="text-2xl font-bold">Jeugddag</h3>
               <p className="text-tiny font-bold uppercase">17 september</p>
@@ -120,7 +120,7 @@ function Home() {
               <p>Het kamp gaat door van 21 juli tot 31 juli in Opoeteren.</p>
             </CardBody>
           </Card>
-          <Card className="">
+          <Card className="bg-gray-900">
             <CardHeader className="flex-col !items-start gap-4">
               <h3 className="text-2xl font-bold">Jeugddag</h3>
               <p className="text-tiny font-bold uppercase">17 september</p>
@@ -129,7 +129,7 @@ function Home() {
               <p>Het kamp gaat door van 21 juli tot 31 juli in Opoeteren.</p>
             </CardBody>
           </Card>
-          <Card className="">
+          <Card className="bg-gray-900">
             <CardHeader className="flex-col !items-start gap-4">
               <h3 className="text-2xl font-bold">Jeugddag</h3>
               <p className="text-tiny font-bold uppercase">17 september</p>
@@ -138,7 +138,7 @@ function Home() {
               <p>Het kamp gaat door van 21 juli tot 31 juli in Opoeteren.</p>
             </CardBody>
           </Card>
-          <Card className="">
+          <Card className="bg-gray-900">
             <CardHeader className="flex-col !items-start gap-4">
               <h3 className="text-2xl font-bold">Jeugddag</h3>
               <p className="text-tiny font-bold uppercase">17 september</p>
