@@ -1,16 +1,13 @@
-import {
-  Card,
-  CardHeader,
-  CardBody,
-  CardFooter,
-  Spinner,
-} from '@nextui-org/react';
+import { Card, Spinner } from '@nextui-org/react';
 import { Group } from '../../typings/api/Group';
 import { Person } from '../../typings/api/Person';
 import { useEffect, useState } from 'react';
 import { useParams } from 'react-router';
 import useGroups from '../../api/useGroups';
 import ErrorBox from '../../components/ErrorBox';
+import GroupHeader from './group/GroupHeader';
+import GroupDetails from './group/GroupDetails';
+import PersonList from './group/PersonList';
 
 function Group() {
   const [group, setGroup] = useState(null as Group | null);
@@ -59,42 +56,11 @@ function Group() {
 
   return (
     <Card className="m-8 bg-gray-900 p-16">
-      <CardHeader className="mb-8 flex justify-center">
-        <h1 className="text-6xl font-semibold">{group?.name}</h1>
-      </CardHeader>
       {error && <ErrorBox error={error} />}
       {loading && <Spinner />}
-      {!error && !loading && (
-        <CardBody>
-          <div className="flex w-full flex-col gap-8 p-4 px-16">
-            <p>{group?.description}</p>
-            <p>Afdelingskleur: {group?.color}</p>
-            <p>Doelgroep: {group?.target}</p>
-          </div>
-        </CardBody>
-      )}
-      {!error && !loading && (
-        <CardFooter>
-          <div className="flex w-full flex-col gap-8 p-4 px-16">
-            <h1 className="text-4xl font-semibold">Leiding</h1>
-            <div className="flex w-full flex-wrap gap-8">
-              {leiding.map((person) => (
-                <Card
-                  key={person.id}
-                  className="w-full bg-background p-4 sm:w-2/5"
-                >
-                  <CardHeader>
-                    <h1 className="text-4xl font-semibold">{person.name}</h1>
-                  </CardHeader>
-                  <CardBody>
-                    <p>{person.bio}</p>
-                  </CardBody>
-                </Card>
-              ))}
-            </div>
-          </div>
-        </CardFooter>
-      )}
+      {!error && !loading && <GroupHeader name={group?.name ?? ''} />}
+      {!error && !loading && group && <GroupDetails {...group} />}
+      {!error && !loading && <PersonList leiding={leiding} />}
     </Card>
   );
 }

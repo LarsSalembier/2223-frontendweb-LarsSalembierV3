@@ -16,7 +16,7 @@ import { LOGO_DATA, BRAND_NAME } from './data/miscData';
 import PAGES from './data/pages';
 import NotFound from './pages/NotFound';
 import Group from './pages/groups/Group';
-import GroupForm from './pages/GroupForm';
+import GroupForm from './pages/groups/GroupForm';
 
 function App() {
   return (

@@ -6,11 +6,11 @@ import {
   Input,
   Textarea,
 } from '@nextui-org/react';
-import useGroups from '../api/useGroups';
-import { FieldValues, SubmitHandler, useForm } from 'react-hook-form';
-import { memo, useEffect, useState } from 'react';
+import useGroups from '../../api/useGroups';
+import { FieldValues, useForm } from 'react-hook-form';
+import { useEffect, useState } from 'react';
 import { useNavigate, useParams } from 'react-router';
-import ErrorBox from '../components/ErrorBox';
+import ErrorBox from '../../components/ErrorBox';
 
 const validationRules = {
   name: {
@@ -73,7 +73,7 @@ function GroupForm() {
         color,
         target,
       });
-      navigate('/groups');
+      navigate('/afdelingen');
     } catch (error) {
       if (error instanceof Error) {
         console.log(error);
