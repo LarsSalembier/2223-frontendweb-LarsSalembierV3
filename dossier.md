@@ -1,18 +1,16 @@
 # Lars Salembier (Studentennummer)
 
-> Duid aan welke vakken je volgt en vermeld voor deze vakken de link naar jouw GitHub repository. In het geval je slechts één vak volgt, verwijder alle inhoud omtrent het andere vak. Verwijder alle instructies (lijnen die starten met >)
-
 - [x] Front-end Web Development
   - [GitHub repository](github.com/HOGENT-Web)
-  - [Online versie](github.com/HOGENT-Web)
-- [x] Web Services: GITHUB URL
+  - [Online versie]() NIET VAN TOEPASSING
+- [x] Web Services
   - [GitHub repository](github.com/HOGENT-Web)
-  - [Online versie](github.com/HOGENT-Web)
+  - [Online versie]() NIET VAN TOEPASSING
 
 **Logingegevens**
 
-- Gebruikersnaam/e-mailadres:
-- Wachtwoord:
+- Gebruikersnaam/e-mailadres: admin123@gmail.com
+- Wachtwoord: admin123@gmail.com
 
 > Vul eventueel aan met extra accounts voor administrators of andere rollen.
 
@@ -192,7 +190,9 @@ We gebruiken [PostCSS-nested](https://www.npmjs.com/package/postcss-nested) om g
 
 ### Front-end Web Development
 
-> Zijn er gekende bugs?
+Wanneer men niet is ingelogd, is het de bedoeling dat alle edit- en create-knoppen verdwijnen. In de plaats daarvan geeft auth0 deze cryptische error die na wat research en vele uren debuggen er niet uit raakt.
+
+![Alt text](https://gyazo.com/edf696fd761732d54441246bfb854e56)
 
 ### Web Services
 
