@@ -9,6 +9,8 @@ import GroupHeader from './group/GroupHeader';
 import GroupDetails from './group/GroupDetails';
 import PersonList from './group/PersonList';
 import usePeople from '../../api/usePeople';
+import { useAuth0 } from '@auth0/auth0-react';
+import RequireAuth from '../../components/auth/RequireAuth';
 
 function Group() {
   const [group, setGroup] = useState(null as Group | null);
@@ -105,24 +107,27 @@ function Group() {
           handleUpdate={onEditPerson}
         />
       )}
-      <div className="flex flex-wrap gap-8">
-        <Button
-          size="lg"
-          className="w-fit bg-red-700"
-          onClick={() => {
-            deleteGroupById(parseInt(id as string));
-          }}
-        >
-          Verwijder afdeling
-        </Button>
-        <Button
-          size="lg"
-          className="w-fit bg-primary"
-          onClick={() => navigate(`/afdelingen/create/${id}`)}
-        >
-          Bewerk afdeling
-        </Button>
-      </div>
+
+      <RequireAuth>
+        <div className="flex flex-wrap gap-8">
+          <Button
+            size="lg"
+            className="w-fit bg-red-700"
+            onClick={() => {
+              deleteGroupById(parseInt(id as string));
+            }}
+          >
+            Verwijder afdeling
+          </Button>
+          <Button
+            size="lg"
+            className="w-fit bg-primary"
+            onClick={() => navigate(`/afdelingen/create/${id}`)}
+          >
+            Bewerk afdeling
+          </Button>
+        </div>
+      </RequireAuth>
     </Card>
   );
 }

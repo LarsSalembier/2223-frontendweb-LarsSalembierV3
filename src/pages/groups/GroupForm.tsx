@@ -126,6 +126,7 @@ function GroupForm() {
             placeholder="Naam van de afdeling"
             validationState={errors.name ? 'invalid' : 'valid'}
             errorMessage={errors.name?.message?.toString()}
+            data-cy="name_input"
           />
           {errors.user && <p>{errors.user.toString()}</p>}
 
@@ -141,6 +142,7 @@ function GroupForm() {
             placeholder="Beschrijving van de afdeling"
             validationState={errors.description ? 'invalid' : 'valid'}
             errorMessage={errors.description?.message?.toString()}
+            data-cy="description_input"
           />
 
           <Input
@@ -153,6 +155,7 @@ function GroupForm() {
             placeholder="Kleur van de afdeling"
             validationState={errors.color ? 'invalid' : 'valid'}
             errorMessage={errors.color?.message?.toString()}
+            data-cy="color_input"
           />
 
           <Input
@@ -165,8 +168,9 @@ function GroupForm() {
             placeholder="Doelgroep van de afdeling"
             validationState={errors.target ? 'invalid' : 'valid'}
             errorMessage={errors.target?.message?.toString()}
+            data-cy="target_input"
           />
-          <Button type="submit" disabled={isSubmitting}>
+          <Button type="submit" disabled={isSubmitting} data-cy="submit_group">
             Afdeling {id ? 'bewerken' : 'toevoegen'}
           </Button>
         </form>

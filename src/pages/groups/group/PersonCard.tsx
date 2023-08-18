@@ -6,6 +6,7 @@ import {
   CardFooter,
 } from '@nextui-org/react';
 import { Person } from '../../../typings/api/Person';
+import RequireAuth from '../../../components/auth/RequireAuth';
 
 type Props = {
   person: Person;
@@ -25,22 +26,24 @@ function PersonCard({ person, handleDelete, handleUpdate }: Props) {
         <p>Telefoonnummer: {person.phoneNumber}</p>
         <p>Studies of job: {person.studiesOrJob}</p>
       </CardBody>
-      <CardFooter className="flex flex-col space-y-4">
-        <Button
-          size="lg"
-          className="w-fit bg-red-700"
-          onClick={() => handleDelete(person.id)}
-        >
-          Verwijder leiding
-        </Button>
-        <Button
-          size="lg"
-          className="w-fit bg-primary"
-          onClick={() => handleUpdate(person.id)}
-        >
-          Bewerk leiding
-        </Button>
-      </CardFooter>
+      <RequireAuth>
+        <CardFooter className="flex flex-col space-y-4">
+          <Button
+            size="lg"
+            className="w-fit bg-red-700"
+            onClick={() => handleDelete(person.id)}
+          >
+            Verwijder leiding
+          </Button>
+          <Button
+            size="lg"
+            className="w-fit bg-primary"
+            onClick={() => handleUpdate(person.id)}
+          >
+            Bewerk leiding
+          </Button>
+        </CardFooter>
+      </RequireAuth>
     </Card>
   );
 }

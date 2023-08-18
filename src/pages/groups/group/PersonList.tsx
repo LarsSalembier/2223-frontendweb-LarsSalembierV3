@@ -1,6 +1,7 @@
 import { Button, CardFooter } from '@nextui-org/react';
 import { Person } from '../../../typings/api/Person';
 import PersonCard from './PersonCard';
+import RequireAuth from '../../../components/auth/RequireAuth';
 
 type Props = {
   leiding: Person[];
@@ -20,9 +21,16 @@ function PersonList({
       <div className="flex w-full flex-col gap-8 p-4 px-16">
         <div className="flex flex-wrap gap-4">
           <h1 className="text-4xl font-semibold">Leiding</h1>
-          <Button className="w-fit bg-primary" size="lg" onClick={onAddPerson}>
-            Voeg leiding toe
-          </Button>
+
+          <RequireAuth>
+            <Button
+              className="w-fit bg-primary"
+              size="lg"
+              onClick={onAddPerson}
+            >
+              Voeg leiding toe
+            </Button>
+          </RequireAuth>
         </div>
 
         <div className="flex w-full flex-wrap gap-8">

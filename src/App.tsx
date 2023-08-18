@@ -18,6 +18,7 @@ import NotFound from './pages/NotFound';
 import Group from './pages/groups/Group';
 import GroupForm from './pages/groups/GroupForm';
 import PeopleForm from './pages/groups/PeopleForm';
+import RequireAuth from './components/auth/RequireAuth';
 
 function App() {
   return (
@@ -32,14 +33,39 @@ function App() {
             <Route index element={<GroupList />} />
             <Route path=":id">
               <Route index element={<Group />} />
-              <Route path="leiding/create" element={<PeopleForm />} />
+              <Route
+                path="leiding/create"
+                element={
+                  <RequireAuth>
+                    <PeopleForm />
+                  </RequireAuth>
+                }
+              />
               <Route
                 path="leiding/create/:leidingId"
-                element={<PeopleForm />}
+                element={
+                  <RequireAuth>
+                    <PeopleForm />
+                  </RequireAuth>
+                }
               />
             </Route>
-            <Route path="create" element={<GroupForm />}>
-              <Route path=":id" element={<GroupForm />} />
+            <Route
+              path="create"
+              element={
+                <RequireAuth>
+                  <GroupForm />
+                </RequireAuth>
+              }
+            >
+              <Route
+                path=":id"
+                element={
+                  <RequireAuth>
+                    <GroupForm />
+                  </RequireAuth>
+                }
+              />
             </Route>
           </Route>
           <Route path="kamp" element={<Kamp />} />

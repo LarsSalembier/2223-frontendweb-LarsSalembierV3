@@ -120,7 +120,7 @@ function PeopleForm() {
     <Card className="m-16 bg-gray-900 p-8">
       <CardHeader>
         <h1 className="text-xl">
-          Afdeling {personId ? 'bewerken' : 'toevoegen'}
+          Leiding {personId ? 'bewerken' : 'toevoegen'}
         </h1>
       </CardHeader>
       {error ? <ErrorBox error={error} /> : null}
@@ -191,7 +191,7 @@ function PeopleForm() {
             }
           />
           <Button type="submit" disabled={isSubmitting}>
-            Afdeling {id ? 'bewerken' : 'toevoegen'}
+            Leiding {personId ? 'bewerken' : 'toevoegen'}
           </Button>
         </form>
       </CardBody>
