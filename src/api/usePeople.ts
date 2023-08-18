@@ -58,19 +58,25 @@ const usePeople = () => {
   );
 
   const save = useCallback(
-    async (data: Partial<Person>): Promise<Person> => {
+    async (personData: Partial<Person>, groupId: number): Promise<Person> => {
       const token = await getAccessTokenSilently();
 
-      const { id, ...values } = data;
+      const { id, ...values } = personData;
 
       const response = await axios({
         method: id ? 'put' : 'post',
         url: id ? `${BASE_URL}/${id}` : BASE_URL,
-        data: values,
+        data: {
+          ...values,
+        },
         headers: {
           Authorization: `Bearer ${token}`,
         },
       });
+
+      console.log();
+
+      await joinGroup(response.data.id, groupId);
 
       return response.data;
     },
@@ -78,14 +84,20 @@ const usePeople = () => {
   );
 
   const joinGroup = useCallback(
-    async (id: number, groupId: string): Promise<void> => {
+    async (id: number, groupId: number): Promise<void> => {
       const token = await getAccessTokenSilently();
 
-      await axios.post(`${BASE_URL}/${id}/groups/${groupId}`, {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      });
+      console.log('groupId', groupId);
+
+      await axios.post(
+        `${BASE_URL}/${id}/groups`,
+        { groupId },
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }
+      );
     },
     [getAccessTokenSilently]
   );

@@ -8,6 +8,7 @@ import ErrorBox from '../../components/ErrorBox';
 import GroupHeader from './group/GroupHeader';
 import GroupDetails from './group/GroupDetails';
 import PersonList from './group/PersonList';
+import usePeople from '../../api/usePeople';
 
 function Group() {
   const [group, setGroup] = useState(null as Group | null);
@@ -19,6 +20,8 @@ function Group() {
   const { id } = useParams();
 
   const groupApi = useGroups();
+
+  const peopleApi = usePeople();
 
   const navigate = useNavigate();
 
@@ -69,13 +72,39 @@ function Group() {
     }
   }, [group]);
 
+  const onAddPerson = () => {
+    navigate(`/afdelingen/${id}/leiding/create`);
+  };
+
+  const onEditPerson = (personId: number) => {
+    navigate(`/afdelingen/${id}/leiding/create/${personId}`);
+  };
+
+  const onDeletePerson = async (personId: number) => {
+    try {
+      setError(null);
+      await groupApi.removeMember(group?.id ?? 0, personId);
+      await peopleApi.deleteById(personId);
+      setLeiding(leiding.filter((p) => p.id !== personId));
+    } catch (error) {
+      setError(error as Error);
+    }
+  };
+
   return (
     <Card className="m-8 bg-gray-900 p-16">
       {error && <ErrorBox error={error} />}
       {loading && <Spinner />}
       {!error && !loading && <GroupHeader name={group?.name ?? ''} />}
       {!error && !loading && group && <GroupDetails {...group} />}
-      {!error && !loading && <PersonList leiding={leiding} />}
+      {!error && !loading && (
+        <PersonList
+          leiding={leiding}
+          onAddPerson={onAddPerson}
+          handleDelete={onDeletePerson}
+          handleUpdate={onEditPerson}
+        />
+      )}
       <div className="flex flex-wrap gap-8">
         <Button
           size="lg"

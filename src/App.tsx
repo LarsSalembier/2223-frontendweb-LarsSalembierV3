@@ -17,6 +17,7 @@ import PAGES from './data/pages';
 import NotFound from './pages/NotFound';
 import Group from './pages/groups/Group';
 import GroupForm from './pages/groups/GroupForm';
+import PeopleForm from './pages/groups/PeopleForm';
 
 function App() {
   return (
@@ -29,7 +30,14 @@ function App() {
           <Route path="kalender" element={<Kalender />} />
           <Route path="afdelingen">
             <Route index element={<GroupList />} />
-            <Route path=":id" element={<Group />} />
+            <Route path=":id">
+              <Route index element={<Group />} />
+              <Route path="leiding/create" element={<PeopleForm />} />
+              <Route
+                path="leiding/create/:leidingId"
+                element={<PeopleForm />}
+              />
+            </Route>
             <Route path="create" element={<GroupForm />}>
               <Route path=":id" element={<GroupForm />} />
             </Route>

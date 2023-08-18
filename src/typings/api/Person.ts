@@ -5,7 +5,6 @@ export type Person = {
   phoneNumber?: string;
   bio?: string;
   studiesOrJob?: string;
-  birthdate?: Date;
 };
 
 export type StringifiedPerson = {
@@ -15,13 +14,11 @@ export type StringifiedPerson = {
   phoneNumber?: string;
   bio?: string;
   studiesOrJob?: string;
-  birthdate?: string;
 };
 
 export function fromStringifiedPerson(person: StringifiedPerson): Person {
   return {
     ...person,
     id: parseInt(person.id),
-    birthdate: person.birthdate ? new Date(person.birthdate) : undefined,
   };
 }
