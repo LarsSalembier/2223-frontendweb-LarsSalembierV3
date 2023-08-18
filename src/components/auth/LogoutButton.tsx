@@ -1,7 +1,7 @@
 import { useAuth0 } from '@auth0/auth0-react';
-import { Button } from '@nextui-org/react';
+import { Button, ButtonProps } from '@nextui-org/react';
 
-function LogoutButton() {
+function LogoutButton(buttonProps: ButtonProps) {
   const { logout } = useAuth0();
 
   return (
@@ -12,6 +12,7 @@ function LogoutButton() {
         })
       }
       color="primary"
+      {...buttonProps}
     >
       Uitloggen
     </Button>

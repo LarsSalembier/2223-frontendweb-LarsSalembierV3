@@ -2,24 +2,13 @@ export enum PageLocationInNavigation {
   MAIN = 'main',
   EXTRA = 'extra',
   BRAND = 'brand',
+  NOWHERE = 'nowhere',
 }
 
-class Page {
+type Page = {
   name: string;
-
   path: string;
-
   locationInNavigation: PageLocationInNavigation;
-
-  constructor(
-    name: string,
-    path: string,
-    locationInNavigation: PageLocationInNavigation
-  ) {
-    this.name = name;
-    this.path = path;
-    this.locationInNavigation = locationInNavigation;
-  }
-}
+};
 
 export default Page;

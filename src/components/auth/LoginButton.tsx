@@ -1,8 +1,8 @@
 import { useAuth0 } from '@auth0/auth0-react';
-import { Button } from '@nextui-org/react';
+import { Button, ButtonProps } from '@nextui-org/react';
 import { useCallback } from 'react';
 
-function LoginButton() {
+function LoginButton(buttonProps: ButtonProps) {
   const { loginWithRedirect } = useAuth0();
 
   const handleLogin = useCallback(async () => {
@@ -10,7 +10,7 @@ function LoginButton() {
   }, [loginWithRedirect]);
 
   return (
-    <Button onClick={handleLogin} color="primary">
+    <Button onClick={handleLogin} color="primary" {...buttonProps}>
       Inloggen
     </Button>
   );

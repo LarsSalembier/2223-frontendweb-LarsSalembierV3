@@ -51,6 +51,11 @@ const PAGES: Page[] = [
     path: '/privacy',
     locationInNavigation: PageLocationInNavigation.EXTRA,
   },
+  {
+    name: 'Login',
+    path: '/login',
+    locationInNavigation: PageLocationInNavigation.NOWHERE,
+  },
 ];
 
 export default PAGES;

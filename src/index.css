@@ -1,3 +1,27 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.paars {
+  @apply bg-purple-900 text-white;
+}
+
+.blauw {
+  @apply bg-blue-900 text-white;
+}
+
+.geel {
+  @apply bg-yellow-700 text-white;
+}
+
+.rood {
+  @apply bg-red-900 text-white;
+}
+
+.groen {
+  @apply bg-green-900 text-white;
+}
+
+.oranje {
+  @apply bg-orange-900 text-white;
+}

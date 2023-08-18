@@ -6,7 +6,7 @@ function Footer() {
       <p className="absolute inset-0 flex items-center justify-center text-white">
         © Chiro Houthulst 2023
       </p>
-      <div className="flex flex-1 justify-end">
+      <div className="m-2 flex flex-1 justify-end">
         <AuthenticationButton />
       </div>
     </footer>

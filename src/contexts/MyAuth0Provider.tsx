@@ -5,9 +5,12 @@ type MyAuth0ProviderProps = {
 };
 
 function MyAuth0Provider({ children }: MyAuth0ProviderProps) {
-  const domain: string = import.meta.env.VITE_REACT_APP_AUTH0_DOMAIN;
-  const audience: string = import.meta.env.VITE_REACT_APP_AUTH0_AUDIENCE;
-  const clientId: string = import.meta.env.VITE_REACT_APP_AUTH0_CLIENT_ID;
+  const domain: string | undefined = import.meta.env
+    .VITE_REACT_APP_AUTH0_DOMAIN;
+  const audience: string | undefined = import.meta.env
+    .VITE_REACT_APP_AUTH0_API_AUDIENCE;
+  const clientId: string | undefined = import.meta.env
+    .VITE_REACT_APP_AUTH0_CLIENT_ID;
 
   if (!domain) {
     throw new Error('VITE_REACT_APP_AUTH0_DOMAIN is not set');
@@ -28,7 +31,7 @@ function MyAuth0Provider({ children }: MyAuth0ProviderProps) {
       domain={domain}
       clientId={clientId}
       authorizationParams={{
-        redirect_uri: window.location.origin,
+        redirect_uri: `${window.location.origin}/login`,
         audience: audience,
       }}
       cacheLocation="localstorage"

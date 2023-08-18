@@ -10,7 +10,7 @@ import {
   Image,
 } from '@nextui-org/react';
 import { useState } from 'react';
-import NavigationItem from '../typings/navigationItem';
+import Page, { PageLocationInNavigation } from '../typings/page';
 
 type NavigationProps = {
   logoData: {
@@ -20,14 +20,18 @@ type NavigationProps = {
     alt: string;
   };
   brandName: string;
-  items: NavigationItem[];
+  items: Page[];
 };
 
 function Navigation({ logoData, brandName, items }: NavigationProps) {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  const mainItems = items.filter((item) => item.isMainNavigationItem());
-  const extraItems = items.filter((item) => item.isExtraNavigationItem());
+  const mainItems = items.filter(
+    (item) => item.locationInNavigation === PageLocationInNavigation.MAIN
+  );
+  const extraItems = items.filter(
+    (item) => item.locationInNavigation === PageLocationInNavigation.EXTRA
+  );
 
   return (
     <Navbar

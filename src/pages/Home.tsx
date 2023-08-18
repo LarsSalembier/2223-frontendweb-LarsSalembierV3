@@ -6,11 +6,10 @@ import {
   Divider,
   Image,
 } from '@nextui-org/react';
-import PageContainer from '../components/PageContainer';
 
 function Home() {
   return (
-    <PageContainer>
+    <>
       <div className="w-full space-y-8 px-8 py-8 sm:space-y-12 sm:px-32 sm:py-32">
         <h1 className="w-2/3 text-3xl font-semibold leading-tight sm:text-6xl">
           Word lid van de leukste jeugdbeweging van Houthulst
@@ -149,7 +148,7 @@ function Home() {
           </Card>
         </div>
       </div>
-    </PageContainer>
+    </>
   );
 }
 
