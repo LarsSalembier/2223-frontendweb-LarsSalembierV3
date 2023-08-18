@@ -109,14 +109,13 @@ function GroupForm() {
   return (
     <Card className="m-16 bg-gray-900 p-8">
       <CardHeader>
-        <h1 className="text-xl">Afdeling toevoegen</h1>
+        <h1 className="text-xl">Afdeling {id ? 'bewerken' : 'toevoegen'}</h1>
       </CardHeader>
       {error ? <ErrorBox error={error} /> : null}
       <CardBody>
         <form className="flex flex-col gap-8" onSubmit={handleSubmit(onSubmit)}>
           <Input
             {...register('name', validationRules.name)}
-            defaultValue=""
             id="name"
             type="text"
             label="Naam"
@@ -124,12 +123,12 @@ function GroupForm() {
             required
             isRequired
             variant="bordered"
+            placeholder="Naam van de afdeling"
           />
           {errors.user && <p>{errors.user.toString()}</p>}
 
           <Textarea
             {...register('description', validationRules.description)}
-            defaultValue=""
             id="description"
             type="text"
             label="Beschrijving"
@@ -137,29 +136,30 @@ function GroupForm() {
             required
             isRequired
             variant="bordered"
+            placeholder="Beschrijving van de afdeling"
           />
 
           <Input
             {...register('color', validationRules.color)}
-            defaultValue=""
             id="color"
             type="text"
             label="Kleur"
             className="form-control"
             variant="bordered"
+            placeholder="Kleur van de afdeling"
           />
 
           <Input
             {...register('target', validationRules.target)}
-            defaultValue=""
             id="target"
             type="text"
             label="Doelgroep"
             className="form-control"
             variant="bordered"
+            placeholder="Doelgroep van de afdeling"
           />
           <Button type="submit" disabled={isSubmitting}>
-            Afdeling toevoegen
+            Afdeling {id ? 'bewerken' : 'toevoegen'}
           </Button>
         </form>
       </CardBody>

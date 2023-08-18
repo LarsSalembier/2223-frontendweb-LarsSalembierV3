@@ -1,15 +1,18 @@
-import { Card } from '@nextui-org/react';
+import { Button, Card } from '@nextui-org/react';
 import useGroups from '../../api/useGroups';
 import { useEffect, useState } from 'react';
 import Group from './Group';
 import GroupListHeader from './groupList/GroupListHeader';
 import GroupListBody from './groupList/GroupListBody';
+import { useNavigate } from 'react-router';
 
 function GroupList() {
   const [groups, setGroups] = useState([] as Group[]);
   const [error, setError] = useState(null as Error | null);
   const [loading, setLoading] = useState(true);
   const groupApi = useGroups();
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchGroups = async () => {
@@ -43,7 +46,7 @@ function GroupList() {
 
   return (
     <div>
-      <Card className="m-8 bg-gray-900 p-16">
+      <Card className="m-8 flex flex-col bg-gray-900 p-16">
         <GroupListHeader />
         <GroupListBody
           groups={groups}
@@ -51,6 +54,14 @@ function GroupList() {
           loading={loading}
           onDelete={deleteGroupById}
         />
+        <Button
+          color="primary"
+          size="lg"
+          className="mt-8 w-fit"
+          onClick={() => navigate('/afdelingen/create')}
+        >
+          Voeg een afdeling toe
+        </Button>
       </Card>
     </div>
   );

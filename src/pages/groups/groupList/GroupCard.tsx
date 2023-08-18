@@ -4,13 +4,10 @@ import {
   CardBody,
   CardFooter,
   Divider,
-  Spinner,
+  Button,
 } from '@nextui-org/react';
 import { useNavigate } from 'react-router-dom';
 import { Group } from '../../../typings/api/Group';
-import React from 'react';
-import DeleteButton from '../../../components/DeleteButton';
-import ErrorBox from '../../../components/ErrorBox';
 
 type Props = {
   group: Group;
@@ -19,9 +16,6 @@ type Props = {
 
 function GroupCard({ group, onDelete }: Props) {
   const navigate = useNavigate();
-
-  const [error, setError] = React.useState(null as Error | null);
-  const [loading, setLoading] = React.useState(false);
 
   const handleDelete = async () => {
     await onDelete(group.id);
@@ -40,14 +34,21 @@ function GroupCard({ group, onDelete }: Props) {
       <CardBody>
         <p>{group.description}</p>
       </CardBody>
-      <CardFooter className="flex flex-col space-y-2">
+      <CardFooter className="flex flex-col space-y-4">
         {group.color ? <p className="text-lg">Kleur: {group.color}</p> : null}
         {group.target ? (
           <p className="text-lg">Doelgroep: {group.target}</p>
         ) : null}
-        <DeleteButton onDelete={handleDelete} />
-        {error ? <ErrorBox error={error} /> : null}
-        {loading ? <Spinner /> : null}
+        <Button size="lg" className="w-fit bg-red-700" onClick={handleDelete}>
+          Verwijder afdeling
+        </Button>
+        <Button
+          size="lg"
+          className="w-fit bg-primary"
+          onClick={() => navigate(`/afdelingen/create/${group.id}`)}
+        >
+          Bewerk afdeling
+        </Button>
       </CardFooter>
     </Card>
   );

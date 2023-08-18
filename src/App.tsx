@@ -30,7 +30,9 @@ function App() {
           <Route path="afdelingen">
             <Route index element={<GroupList />} />
             <Route path=":id" element={<Group />} />
-            <Route path="create" element={<GroupForm />} />
+            <Route path="create" element={<GroupForm />}>
+              <Route path=":id" element={<GroupForm />} />
+            </Route>
           </Route>
           <Route path="kamp" element={<Kamp />} />
           <Route path="inschrijven" element={<Inschrijven />} />
